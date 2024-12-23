@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Categoria de Vendas -->
+        <record id="category_vendas" model="ir.module.category">
+            <field name="name">Permissões extras vendas</field>
+            <field name="description">Permissões extras para o modulo de vendas</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Grupo de Vendas -->
+        <record id="group_vendas" model="res.groups">
+            <field name="name">Campos novos</field>
+            <field name="category_id" ref="category_vendas"/>
+        </record>
+
+
+    </data>
+</odoo>
