@@ -10,4 +10,6 @@ class SaleOrderLine(models.Model):
         store=True,
     )
 
+    print("Modelo 'sale.order.line' carregado com sucesso!")
+
 
