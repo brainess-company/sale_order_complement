@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_order_line_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order.line.tree.inherit</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree"/>
+        <field name="arch" type="xml">
+            <tree position="inside">
+                <!-- Campo NCM -->
+                <field name="product_id.ncm_id" string="NCM" />
+                <!-- Campo Marca -->
+                <field name="product_id.product_tmpl_id.brand_id" string="Marca" />
+            </tree>
+        </field>
+    </record>
+</odoo>
