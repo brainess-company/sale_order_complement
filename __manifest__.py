@@ -8,7 +8,7 @@
     'data': [
     #'security/security.xml',
     'views/sale_order_line_views.xml',  # Já configurado
-    'views/portal_sale_order_template.xml',  # Portal
+    #'views/portal_sale_order_template.xml',  # Portal
     'views/report_sale_order.xml',  # Relatório PDF
     #'security/ir.model.access.csv',
 ],
