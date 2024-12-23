@@ -4,8 +4,8 @@
         <field name="model">sale.order.line</field>
         <field name="inherit_id" ref="sale.view_order_line_tree"/>
         <field name="arch" type="xml">
-            <tree position="after">
-                <!-- Campo NCM inside -->
+            <tree position="inside">
+                <!-- Campo NCM after -->
                 <field name="ncm_id" string="NCM" />
                 <!-- Campo Marca -->
                 <field name="brand_id" string="Marca" />
