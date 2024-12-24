@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="portal_sale_order_template_inherit" inherit_id="sale.portal_sale_order_template">
         <xpath expr="//table[@class='table table-sm table-hover']/thead/tr" position="inside">
