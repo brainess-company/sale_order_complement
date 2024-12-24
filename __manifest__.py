@@ -6,13 +6,13 @@
     'license': 'LGPL-3',
     'depends': ['sale', 'l10n_br_fiscal'],  # Adicione os módulos necessários
     'data': [
-    'security/security.xml',
-    'security/ir.model.access.csv',
-    'views/sale_order_line_views.xml',  # Já configurado
-    #'views/portal_sale_order_template.xml',  # Portal
-    'views/report_sale_order.xml',  # Relatório PDF
+        #'security/security.xml',
+        #'security/ir.model.access.csv',
+        'views/sale_order_line_views.xml',  # Já configurado
+        #'views/portal_sale_order_template.xml',  # Portal
+        'views/report_sale_order.xml',  # Relatório PDF
 
-],
+    ],
     'installable': True,
     'application': False,
 }
