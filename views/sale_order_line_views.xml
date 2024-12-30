@@ -5,7 +5,7 @@
         <field name="model">sale.order.line</field>
         <field name="inherit_id" ref="sale.view_order_line_tree"/>
         <field name="arch" type="xml">
-            <xpath expr="//tree" position="inside">
+            <xpath expr="//tree" position="after">
                 <field name="brand_id" optional="show"/>
                 <field name="ncm_id" optional="show"/>
             </xpath>
