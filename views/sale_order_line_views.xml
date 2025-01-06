@@ -30,19 +30,13 @@
 </odoo-->
 
 <odoo>
-    <record id="l10n_br_sale_order_inherit" model="ir.ui.view">
-        <field name="name">l10n_br.sale.order.form.inherit</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_line_tree"/> <!-- Aqui usamos o ref da view de formulário do sale.order -->
+    <record id="l10n_br_sale_order_line_tree_inherit" model="ir.ui.view">
+        <field name="name">l10n_br.sale.order.line.tree.inherit</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree"/> <!-- Ref para a tree view de sale.order.line -->
         <field name="arch" type="xml">
-            <!-- Herda a tree view de sale.order.line dentro do formulário de sale.order -->
-            <xpath expr="//field[@name='order_line']" position="attributes">
-                <attribute name="widget">one2many_list</attribute>
-            </xpath>
-
-            <!-- Modifica a tree view de sale.order.line -->
+            <!-- Adiciona as novas colunas na tree de sale.order.line -->
             <xpath expr="//tree[@model='sale.order.line']" position="inside">
-                <!-- Adiciona as novas colunas na tree -->
                 <field name="ncm_id"/>
                 <field name="brand_id"/>
             </xpath>
