@@ -30,15 +30,21 @@
 </odoo-->
 
 <odoo>
-    <record id="l10n_br_sale_order_line_inherit" model="ir.ui.view">
-        <field name="name">l10n_br.sale.order.line.form.inherit</field>
-        <field name="model">sale.order.line</field>
-        <field name="inherit_id" ref="sale.view_order_line_form" />
+    <record id="l10n_br_sale_order_inherit" model="ir.ui.view">
+        <field name="name">l10n_br.sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/> <!-- Aqui usamos o ref da view de formulário do sale.order -->
         <field name="arch" type="xml">
-            <!-- Adiciona os campos de marca e NCM após o produto -->
-            <xpath expr="//field[@name='product_id']" position="after">
-                <field name="brand_id" options="{'no_create': True}" domain="[('product_id', '=', product_id)]" />
-                <field name="ncm_id" options="{'no_create': True}" domain="[('product_id', '=', product_id)]" />
+            <!-- Herda a tree view de sale.order.line dentro do formulário de sale.order -->
+            <xpath expr="//field[@name='order_line']" position="attributes">
+                <attribute name="widget">one2many_list</attribute>
+            </xpath>
+
+            <!-- Modifica a tree view de sale.order.line -->
+            <xpath expr="//tree[@model='sale.order.line']" position="inside">
+                <!-- Adiciona as novas colunas na tree -->
+                <field name="ncm_id"/>
+                <field name="brand_id"/>
             </xpath>
         </field>
     </record>
