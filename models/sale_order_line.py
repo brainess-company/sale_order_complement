@@ -10,6 +10,9 @@ class SaleOrderLine(models.Model):
         store=True,
     )
 
-    print("Modelo 'sale.order.line' carregado com sucesso!")
+    ncm_id = fields.Many2one(
+        comodel_name='l10n_br_fiscal.ncm',
+        string='NCM'
+    )
 
 
