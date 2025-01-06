@@ -33,7 +33,7 @@
     <record id="l10n_br_sale_order_inherit" model="ir.ui.view">
         <field name="name">l10n_br.sale.order.form.inherit</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/> <!-- Aqui usamos o ref da view de formulário do sale.order -->
+        <field name="inherit_id" ref="sale.view_order_line_tree"/> <!-- Aqui usamos o ref da view de formulário do sale.order -->
         <field name="arch" type="xml">
             <!-- Herda a tree view de sale.order.line dentro do formulário de sale.order -->
             <xpath expr="//field[@name='order_line']" position="attributes">
