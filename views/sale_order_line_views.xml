@@ -4,6 +4,7 @@
         <field name="name">sale.order.line.tree.inherit.brand.ncm</field>
         <field name="model">sale.order.line</field>
         <field name="inherit_id" ref="sale.view_order_line_tree"/>
+        <field name="priority">100</field>
         <field name="arch" type="xml">
             <xpath expr="//tree//field[@name='product_uom_qty']" position="after">
                 <field name="brand_id" string="Marca"/>
