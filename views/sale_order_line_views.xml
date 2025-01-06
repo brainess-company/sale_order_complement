@@ -15,7 +15,7 @@
 </-odoo> -->
 <odoo>
     <!-- Extensão da View 'sale.order.line' -->
-    <record id="view_sale_order_line_with_brand_ncm" model="ir.ui.view">
+    <record id="view_sale_order_line_form_brand_ncm" model="ir.ui.view">
         <field name="name">sale.order.line.form.brand.ncm</field>
         <field name="model">sale.order.line</field>
         <field name="inherit_id" ref="sale.view_order_line_form"/>
