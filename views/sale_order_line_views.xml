@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<!--odoo>
     <record id="view_order_line_tree_inherit_brand_ncm" model="ir.ui.view">
         <field name="name">sale.order.line.tree.inherit.brand.ncm</field>
         <field name="model">sale.order.line</field>
@@ -12,4 +12,20 @@
         </field>
     </record>
 
+</-odoo> -->
+<odoo>
+    <!-- Extensão da View 'sale.order.line' -->
+    <record id="view_sale_order_line_with_brand_ncm" model="ir.ui.view">
+        <field name="name">sale.order.line.form.brand.ncm</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_form"/>
+        <field name="arch" type="xml">
+            <!-- Adicionando o campo brand_id e ncm_id após o campo product_id -->
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="brand_id" string="Marca" />
+                <field name="ncm_id" string="NCM" />
+            </xpath>
+        </field>
+    </record>
 </odoo>
+
