@@ -4,11 +4,10 @@
     'summary': 'Add NCM and Brand fields to sale order lines and customer views.',
     'author': 'Your Name',
     'license': 'LGPL-3',
-    'depends': ['sale',
+    'depends': ['l10n_br_sale',
                 'l10n_br_fiscal',
                 'product',
-                'product_brand_inventory',
-                'l10n_br_base'],  # Adicione os módulos necessários ,
+                'product_brand_inventory'],  # Adicione os módulos necessários ,
     'data': [
         #'security/security.xml',
         #'security/ir.model.access.csv',
