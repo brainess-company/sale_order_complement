@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="report_saleorder_inherit" inherit_id="sale.report_saleorder_document">
-        <xpath expr="//table//thead" position="inside">
+        <xpath expr="//table//thead/tr" position="inside">
             <th>NCM</th>
             <th>Marca</th>
         </xpath>
@@ -14,4 +14,5 @@
             </td>
         </xpath>
     </template>
+
 </odoo>
