@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="portal_sale_order_template_inherit" inherit_id="sale.portal_sale_order_template">
+        <!-- Adicionar cabeçalhos das novas colunas -->
         <xpath expr="//table[@class='table table-sm table-hover']/thead/tr" position="inside">
-            <!-- Adicionar cabeçalhos das novas colunas -->
             <th>NCM</th>
             <th>Marca</th>
         </xpath>
+
+        <!-- Adicionar valores para NCM e Marca -->
         <xpath expr="//table[@class='table table-sm table-hover']/tbody/tr" position="inside">
-            <!-- Adicionar valores para NCM e Marca -->
-            <td><t t-esc="line.ncm_id.name or ''" /></td>
-            <td><t t-esc="line.brand_id.name or ''" /></td>
+            <td>
+                <t t-esc="line.product_id.ncm_id.name or ''" />
+            </td>
+            <td>
+                <t t-esc="line.product_id.brand_id.name or ''" />
+            </td>
         </xpath>
     </template>
 </odoo>
