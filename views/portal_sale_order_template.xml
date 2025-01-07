@@ -1,24 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <template id="portal_sale_order_template_inherit" inherit_id="sale.sale_order_portal_template">
-        <!-- Adicionando as colunas NCM e Marca no cabeçalho da tabela -->
-        <xpath expr="//table[contains(@class, 'table-sm') and contains(@class, 'table-hover')]/thead" position="inside">
-            <tr>
-                <th>NCM</th>
-                <th>Marca</th>
-            </tr>
-        </xpath>
+<?xml version="1.0" encoding="UTF-8"?><odoo>
+    <data>
 
-        <!-- Adicionando os valores de NCM e Marca no corpo da tabela -->
-        <xpath expr="//table[contains(@class, 'table-sm') and contains(@class, 'table-hover')]/tbody" position="inside">
-            <tr>
-                <td>
-                    <t t-esc="line.product_id.ncm_code or ''"/>
-                </td>
-                <td>
-                    <t t-esc="line.product_id.brand_id.name or ''"/>
-                </td>
-            </tr>
-        </xpath>
-    </template>
+        <!-- Herdar a view sale.report_saleorder_document -->
+        <template id="sale_report_saleorder_document_inherit" name="Sale Order Report Inherit" inherit_id="sale.report_saleorder_document">
+
+            <xpath expr="//table[@class='table table-sm o_main_table']/tbody" position="inside">
+
+                <!-- Iterar sobre as linhas do pedido -->
+                <t t-foreach="doc.order_line" t-as="line">
+                    <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                        <t t-if="not line.display_type">
+                            <td name="td_name"><span t-field="line.name"/></td>
+                            <td name="td_quantity" class="text-right">
+                                <span t-field="line.product_uom_qty"/>
+                                <span t-field="line.product_uom"/>
+                            </td>
+                            <td name="td_priceunit" class="text-right">
+                                <span t-field="line.price_unit"/>
+                            </td>
+                            <td t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
+                                <span t-field="line.discount"/>
+                            </td>
+                            <td name="td_taxes" class="text-right">
+                                <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
+                            </td>
+                            <td name="td_subtotal" class="text-right o_price_total">
+                                <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                            </td>
+
+                            <!-- Adicionar os novos campos -->
+                            <td name="td_ncm_code" class="text-right">
+                                <span t-field="line.ncm_code"/>
+                            </td>
+                            <td name="td_brand_id" class="text-right">
+                                <span t-field="line.brand_id.name"/>
+                            </td>
+                        </t>
+                    </tr>
+                </t>
+
+            </xpath>
+        </template>
+
+    </data>
 </odoo>
