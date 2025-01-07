@@ -8,7 +8,7 @@
             <!-- Adiciona os campos no Tree View -->
             <xpath expr="//field[@name='order_line']/tree" position="inside">
                 <field name="ncm_code" />
-                <field name="brand_id" str="Marca" />
+                <field name="brand_id" />
             </xpath>
 
             <!-- Adiciona os campos no Form View -->

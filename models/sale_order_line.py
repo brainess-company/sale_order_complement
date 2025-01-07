@@ -5,7 +5,7 @@ class SaleOrderLine(models.Model):
 
     brand_id = fields.Many2one(
         comodel_name='product.brand',
-        string='Brand',
+        string='Marca',
         related='product_id.product_tmpl_id.brand_id',
         store=True,
     )
