@@ -7,14 +7,14 @@
         <field name="arch" type="xml">
             <!-- Adiciona os campos no Tree View -->
             <xpath expr="//field[@name='order_line']/tree" position="inside">
-                <field name="ncm_cod" />
+                <field name="ncm_code" />
                 <field name="brand_id" />
             </xpath>
 
             <!-- Adiciona os campos no Form View -->
             <xpath expr="//field[@name='order_line']/form" position="inside">
                 <group>
-                    <field name="ncm_cod" />
+                    <field name="ncm_code" />
                     <field name="brand_id" />
                 </group>
             </xpath>
