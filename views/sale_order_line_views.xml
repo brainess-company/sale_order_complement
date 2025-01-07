@@ -5,14 +5,14 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <!-- Adiciona os campos ncm_id e brand_id na linha do pedido -->
-            <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="after">
+            <!-- Adiciona os campos no Tree View -->
+            <xpath expr="//field[@name='order_line']/tree" position="inside">
                 <field name="ncm_id" />
                 <field name="brand_id" />
             </xpath>
 
-            <!-- Garante que os campos apareçam no formulário da linha do pedido -->
-            <xpath expr="//field[@name='order_line']/form/sheet" position="inside">
+            <!-- Adiciona os campos no Form View -->
+            <xpath expr="//field[@name='order_line']/form" position="inside">
                 <group>
                     <field name="ncm_id" />
                     <field name="brand_id" />
@@ -20,5 +20,6 @@
             </xpath>
         </field>
     </record>
+
 
 </odoo>
