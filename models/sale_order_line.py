@@ -15,4 +15,10 @@ class SaleOrderLine(models.Model):
         string='NCM'
     )
 
+    ncm_code = fields.Char(
+        related='ncm_id.code',
+        string='NCM Cod',
+        store=True,
+    )
+
 
