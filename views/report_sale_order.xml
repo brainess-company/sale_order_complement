@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="report_saleorder_document_inherit_ncm_brand" inherit_id="sale.report_saleorder_document">
-        <!-- Adicionar cabeçalhos das novas colunas -->
-        <xpath expr="//table[@class='table table-sm']/thead/tr" position="inside">
+    <template id="report_saleorder_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table[@class='table table-sm table-hover']/thead/tr" position="inside">
             <th>NCM</th>
             <th>Marca</th>
         </xpath>
-
-        <!-- Adicionar valores para NCM e Marca -->
-        <xpath expr="//table[@class='table table-sm']/tbody/tr" position="inside">
+        <xpath expr="//table[@class='table table-sm table-hover']/tbody/tr" position="inside">
             <td>
-                <t t-esc="line.product_id.ncm_id.name or ''" />
+                <t t-esc="line.product_id.ncm_id.name or ''"/>
             </td>
             <td>
-                <t t-esc="line.product_id.brand_id.name or ''" />
+                <t t-esc="line.product_id.brand_id.name or ''"/>
             </td>
         </xpath>
     </template>
+
 </odoo>
