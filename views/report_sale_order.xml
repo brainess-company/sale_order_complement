@@ -7,7 +7,7 @@
         </xpath>
         <xpath expr="//table//tbody//tr" position="inside">
             <td>
-                <t t-esc="line.product_id.ncm_id.name or ''"/>
+                <t t-esc="line.product_id.ncm_id.code or ''"/>
             </td>
             <td>
                 <t t-esc="line.product_id.brand_id.name or ''"/>
