@@ -2,19 +2,23 @@
 <odoo>
     <template id="portal_sale_order_template_inherit" inherit_id="sale.portal_my_orders">
         <!-- Adicionando as colunas NCM e Marca no cabeçalho da tabela -->
-        <xpath expr="//table[contains(@class, 'table-sm') and contains(@class, 'table-hover')]/thead/tr" position="inside">
-            <th>NCM</th>
-            <th>Marca</th>
+        <xpath expr="//table[contains(@class, 'table-sm') and contains(@class, 'table-hover')]/thead" position="inside">
+            <tr>
+                <th>NCM</th>
+                <th>Marca</th>
+            </tr>
         </xpath>
 
         <!-- Adicionando os valores de NCM e Marca no corpo da tabela -->
-        <xpath expr="//table[contains(@class, 'table-sm') and contains(@class, 'table-hover')]/tbody/tr" position="inside">
-            <td>
-                <t t-esc="line.product_id.ncm_code or ''"/>
-            </td>
-            <td>
-                <t t-esc="line.product_id.brand_id.name or ''"/>
-            </td>
+        <xpath expr="//table[contains(@class, 'table-sm') and contains(@class, 'table-hover')]/tbody" position="inside">
+            <tr>
+                <td>
+                    <t t-esc="line.product_id.ncm_code or ''"/>
+                </td>
+                <td>
+                    <t t-esc="line.product_id.brand_id.name or ''"/>
+                </td>
+            </tr>
         </xpath>
     </template>
 </odoo>
