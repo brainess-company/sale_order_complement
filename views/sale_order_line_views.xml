@@ -14,7 +14,7 @@
             <!-- Adiciona os campos no Form View -->
             <xpath expr="//field[@name='order_line']/form" position="inside">
                 <group>
-                    <field name="ncm_code" />
+                    <field name="ncm_id" />
                     <field name="brand_id" />
                 </group>
             </xpath>
