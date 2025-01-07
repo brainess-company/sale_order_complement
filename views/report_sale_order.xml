@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="report_saleorder_inherit" inherit_id="sale.report_saleorder_document">
-        <xpath expr="//table[@class='table table-sm table-hover']/thead/tr" position="inside">
+        <xpath expr="//table//thead" position="inside">
             <th>NCM</th>
             <th>Marca</th>
         </xpath>
-        <xpath expr="//table[@class='table table-sm table-hover']/tbody/tr" position="inside">
+        <xpath expr="//table//tbody//tr" position="inside">
             <td>
                 <t t-esc="line.product_id.ncm_id.name or ''"/>
             </td>
@@ -14,5 +14,4 @@
             </td>
         </xpath>
     </template>
-
 </odoo>
