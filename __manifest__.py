@@ -12,7 +12,7 @@
     'data': [
         'views/sale_order_line_views.xml',  # Já configurado
         # 'views/portal_sale_order_template.xml',  # Portal
-        'views/product_search.xml'
+        'views/product_search.xml',
         'views/report_sale_order.xml',  # Relatório PDF
 
     ],
