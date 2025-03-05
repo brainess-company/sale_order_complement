@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="product_template_search_view_inherit_brand" model="ir.ui.view">
+        <field name="name">product.template.search.inherit.brand</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <!-- Adicionando o filtro pelo brand_id -->
+            <filter string="Brand" name="brand_filter" domain="[('brand_id', '=', raw_value)]" position="inside"/>
+
+            <!-- Adicionando a opção de agrupar por Brand -->
+            <group expand="1" string="Group By">
+                <filter string="Brand" name="brand_group" context="{'group_by':'brand_id'}"/>
+            </group>
+        </field>
+    </record>
+</odoo>
