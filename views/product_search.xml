@@ -5,13 +5,13 @@
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_search_view"/>
         <field name="arch" type="xml">
-            <!-- Adicionando o filtro pelo brand_id -->
-            <filter string="Brand" name="brand_filter" domain="[('brand_id', '=', raw_value)]" position="inside"/>
-
-            <!-- Adicionando a opção de agrupar por Brand -->
-            <group expand="1" string="Group By">
+            <xpath expr="//filter[@name='categ_id']" position="after">
+                <filter string="Brand" name="brand_filter" domain="[('brand_id', '=', raw_value)]"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
                 <filter string="Brand" name="brand_group" context="{'group_by':'brand_id'}"/>
-            </group>
+            </xpath>
         </field>
     </record>
 </odoo>
+
